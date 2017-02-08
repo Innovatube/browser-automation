@@ -11,8 +11,8 @@ First download & install WebDriver:
 After that, make sure that the paths to those drivers are added to your system environment variables.
 
 Now clone this repo, install dependencies:
-git clone https://github.com/Innovatube/browser-automation.git
-npm install
+```git clone https://github.com/Innovatube/browser-automation.git```
+```npm install```
 
 Start the test:
-node index.js
+```node index.js```

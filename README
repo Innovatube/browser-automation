@@ -1,13 +1,12 @@
-Selenium-WebDriver browser automation
+#Selenium-WebDriver browser automation
 
+First download & install WebDriver:
 
-First download & install ChromeDriver and FirefoxDriver
+[ChromeDriver]
+(https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
-ChromeDriver
-https://sites.google.com/a/chromium.org/chromedriver/downloads
-
-FirefoxDriver
-https://github.com/mozilla/geckodriver/releases/
+[FirefoxDriver]
+(https://github.com/mozilla/geckodriver/releases/)
 
 After that, make sure that the paths to those drivers are added to your system environment variables.
 

@@ -3,7 +3,7 @@ var webdriver = require('selenium-webdriver'),
 	until = webdriver.util;
 
 var driver = new webdriver.Builder().forBrowser('firefox').build();
-driver.get('http://www.google.com');
+driver.get('https://google.com');
 
 var element = driver.findElement(By.name('q'));
 element.sendKeys('browser automation');
@@ -16,7 +16,8 @@ driver.wait(function() {
   return driver.getTitle().then(function(title) {
     return title.toLowerCase().lastIndexOf('browser automation', 0) === 0;
   });
-}, 3000);
+}, 10000);
+
 
 driver.getTitle().then(function(title) {
   console.log('Page title is: ' + title);

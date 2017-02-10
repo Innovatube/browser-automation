@@ -1,0 +1,21 @@
+SUMMARY - WHILE ATTEMPTING TO TRANSFORM HAND-WRITTEN FLOW PROJECT TEST CASES TO TEST SCRIPTS:
+	
+- Selenese Script is a simplified test script that QAs can use to write tests quickly.
+- JavaScript code using WebDriver API is more advanced but require more time and effort.
+
+- Some of the test cases are transformable into WebDriver code but not Selenese script:
+
+- Even with WebDriver API, some test cases that requires look-and-feel judgement is not fully transformable to automated test.
+
+=======================================
+PROBLEM WITH SELENESE SCRIPT:
+
+- Mouse hovering & checking element attribute when hovered are not working
+
+- Not supporting all XPath attribute query (class name)
+
+
+=======================================
+PROBLEM WITH WEBDRIVER JAVASCRIPT CODE:
+
+- Mouse hovering & checking element attribute when hovered are not working

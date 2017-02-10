@@ -21,10 +21,4 @@ driver.get('https://beta.flowzone.cloud/').then(()=>{
 	})
 });
 
-
-
-
-
-
-
 driver.quit();

@@ -12,7 +12,15 @@ PROBLEM WITH SELENESE SCRIPT:
 
 - Mouse hovering & checking element attribute when hovered are not working
 
-- Not supporting all XPath attribute query (class name)
+- Not supporting XPath fully. The documentation suggest using XPath Checker extension but SeleniumIDE cannot recognise XPath produced by the extension.
+
+- Query element by CSS class results in either:
+  + Complex XPath query {contains(concat(‘ ‘,normalize-space(@class),’ ‘),’ vcard ‘)} instead of {@class="vcard"} which is not working.
+
+  + Usage of DOM query: document.getElementsByClassName('listMenu')
+  (not very friendly to tester, but better in this case)
+
+  + 
 
 - Verifying URL Location with hashbang (https://beta.flowzone.cloud/#Team) is not supported.
 

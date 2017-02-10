@@ -14,6 +14,9 @@ PROBLEM WITH SELENESE SCRIPT:
 
 - Not supporting all XPath attribute query (class name)
 
+- Verifying URL Location with hashbang (https://beta.flowzone.cloud/#Team) is not supported.
+
+=> Documenting is poor. This is the root of all the above problems. Require a lot of trails and error to really understand how it works.
 
 =======================================
 PROBLEM WITH WEBDRIVER JAVASCRIPT CODE:

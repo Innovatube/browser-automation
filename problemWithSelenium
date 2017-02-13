@@ -24,6 +24,8 @@ PROBLEM WITH SELENESE SCRIPT:
 
 - Verifying URL Location with hashbang (https://beta.flowzone.cloud/#Team) is not supported.
 
+- Checking pop-ups links is impossible (must use WebDriver)
+
 => Documenting is poor. This is the root of all the above problems. Require a lot of trails and error to really understand how it works.
 
 =======================================

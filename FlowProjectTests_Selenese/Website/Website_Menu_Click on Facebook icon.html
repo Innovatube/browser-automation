@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://beta.flowzone.cloud/" />
-<title>Website_Menu_Click on Features</title>
+<title>Website_Menu_Click on Facebook icon</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Website_Menu_Click on Features</td></tr>
+<tr><td rowspan="1" colspan="3">Website_Menu_Click on Facebook icon</td></tr>
 </thead><tbody>
 <tr>
 	<td>click</td>
@@ -18,19 +18,15 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=li.menuItem</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementNotPresent</td>
-	<td>css=div.listMenu.showMenu</td>
+	<td>//div[@id='app']/div/nav/div/div/div[2]/div/div/a[3]/i</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>window.location.hash=='#Features'</td>
-	<td>true</td>
+	<td>window.location == 'https://www.facebook.com/FLOWzone.cloud/'</td>
+	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

@@ -12,11 +12,6 @@
 <tr><td rowspan="1" colspan="3">Website_Menu_Click on Login.</td></tr>
 </thead><tbody>
 <tr>
-	<td>open</td>
-	<td>/</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>css=a &gt; div.flowIcon &gt; div &gt; span.flIconText</td>
 	<td></td>
@@ -25,6 +20,11 @@
 	<td>click</td>
 	<td>css=a &gt; div.flowIcon &gt; div &gt; img</td>
 	<td></td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>window.location == 'https://beta.flowzone.cloud/login'</td>
+	<td>true</td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
@@ -41,7 +41,6 @@
 	<td>css=div.sign-up-form</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

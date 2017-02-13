@@ -1,24 +1,30 @@
 
 var webdriver = require('selenium-webdriver'),
 	By = webdriver.By,
-	until = webdriver.util;
+	fs = require('fs'),
+	path = require('path');
+
+var rootPath = path.normalize(__dirname );
+var testDir = rootPath + '/JSTests';
+var testCases = [];
+
+//load tests
+fs.readdirSync(testDir).forEach(function(file) {
+    if (file.indexOf('.js') >= 0) {
+        testCases.push(
+        	require(testDir + '/' + file)(webdriver));
+        console.log('Loaded: ' + file);
+    }
+})
+
 
 var driver = new webdriver.Builder().forBrowser('firefox').build();
 driver.get('https://beta.flowzone.cloud/').then(()=>{
+	testCases.forEach((test)=>{
 
-	var elementToCheck = [];
-	
-	elementToCheck.push(driver.findElement(By.className('flCover')));
-	elementToCheck.push(driver.findElement(By.name('Features')));
-	elementToCheck.push(driver.findElement(By.name('Team')));
-	elementToCheck.push(driver.findElement(By.name('Pricing')));
-	elementToCheck.push(driver.findElement(By.className('Contact')));
-
-	var result = true;
-	elementToCheck.forEach((item, index)=>{
-		result = (item!=null);
-		console.log("Test case 1: ", result);
+		test.run(driver);
 	})
+	
+	driver.quit();
 });
 
-driver.quit();

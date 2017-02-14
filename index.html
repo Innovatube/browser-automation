@@ -22,8 +22,8 @@
 <body unresolved class="fullbleed">
 
     <google-codelab title="Web automation with Selenium" environment="web" feedback-link="">
-        <google-codelab-step label="Introduction to automated tests for Web Apps" duration="45">
-            <h2>Test Automation for Web Apps - Why, When, How</h2>
+        <google-codelab-step label="Automated tests for Web Apps">
+            <h2>Test Automation for Web Apps - Why/When, How</h2>
 
             <h3>Why</h3>
             <ul>
@@ -46,7 +46,60 @@
 
             <h2>Introducing Selenium</h2>
             <h3>It is a set of different tools</h3>
+
             <img src="img/se.png">
+
+            <h2>Selenium IDE</h2>
+            <ul>
+            <li>Tool for recording and playing tests</li>
+            <li>Translate recorded test into many programming languages</li>
+            <li>For Firefox only</li>
+            </ul>            
+
+            <h2>Selenium Remote Control (Selenium 1)</h2>
+            <ul>
+            <li>Based on JavaScript injection</li>
+            <li>Support all browsers</li>
+            <li>Limited function due to JavaScript security  restriction</li>
+            <li>Outdated</li>
+            </ul>            
+
+            <h2>Selenium WebDriver (Selenium 2)</h2>
+            <ul>
+            <li>Based on calling browsers' API</li>
+            <li>Support some certain browsers</li>
+            <li>Faster execution due to native calls</li>
+            <li>Backward compatibility with Selenium 1</li>
+            </ul>             
+
+            <h2>Selenium Grid</h2>
+            <ul>
+            <li>Scale Selenium 1 solution</li>
+            <li>Run test parallely on different machines</li>
+
+            <h2>In this tutorial we will use Selenium IDE and Selenium WebDriver</h2>
+        </google-codelab-step>
+
+        <google-codelab-step label="Selenium IDE">
+        <p>
+
+        First, download SeleniumIDE:<a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/">here</a>
+        <br><br>
+
+        After that, download the project folder <a href="https://github.com/Innovatube/web-automation-test/archive/master.zip">here</a>, and unzip the project folder
+        <br><br>
+
+        Open SeleniumIDE as below:
+        <img href ="img/firefox0.png">
+        <img href ="img/firefox1.png">
+        <br><br>
+
+        Then open the test suite:
+        <img href = "img/ide_openTestSuite.png">
+
+
+        </p>
+        
         </google-codelab-step>
     </google-codelab>
 </body>

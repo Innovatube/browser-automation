@@ -1,8 +1,5 @@
 <!doctype html>
-
-
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <meta name="theme-color" content="#4F7DC9">
@@ -20,220 +17,280 @@
 </head>
 
 <body unresolved class="fullbleed">
+<google-codelab title="Web automation with Selenium" environment="web" feedback-link="">
 
-    <google-codelab title="Web automation with Selenium" environment="web" feedback-link="">
-        <google-codelab-step label="Automated tests for Web Apps">
-            <h2>Test Automation for Web Apps - Why/When, How</h2>
+<google-codelab-step label="Automated tests for Web Apps">
+      <h2>Test Automation for Web Apps - Why/When, How</h2>
 
-            <h3>Why</h3>
-            <ul>
-            <li>Frequent regression testing</li>
-            <li>Rapid feedback to developers</li>
-            <li>Virtually unlimited iterations of test case execution</li>
-            <li>Support for Agile and extreme development methodologies</li>
-            <li>Disciplined documentation of test cases</li>
-            <li>Customized defect reporting</li>
-            <li>Finding defects missed by manual testing</li>
-            </ul>
+      <h3>Why</h3>
+      <ul>
+      <li>Frequent regression testing</li>
+      <li>Rapid feedback to developers</li>
+      <li>Virtually unlimited iterations of test case execution</li>
+      <li>Support for Agile and extreme development methodologies</li>
+      <li>Disciplined documentation of test cases</li>
+      <li>Customized defect reporting</li>
+      <li>Finding defects missed by manual testing</li>
+      </ul>
 
-            <h3>When </h3>
-            <p>It is NOT always advantageous to automate test cases!! When?</p>
-            <ul>
-            <li>UI will change in the future</li>
-            <li>Project is short of time => building automated tests eats time</li>
-            <li>Some test cases is really hard to automate (feeling, readability, responsiveness, external function (send emails)</li>
-            </ul>
+      <h3>When </h3>
+      <p>It is NOT always advantageous to automate test cases!! When?</p>
+      <ul>
+      <li>UI will change in the future</li>
+      <li>Project is short of time => building automated tests eats time</li>
+      <li>Some test cases is really hard to automate (feeling, readability, responsiveness, external function (send emails)</li>
+      </ul>
 
-            <h2>Introducing Selenium</h2>
-            <h3>It is a set of different tools</h3>
+      <h2>Introducing Selenium</h2>
+      <h3>It is a set of different tools</h3>
 
-            <img src="img/se.png">
+      <img src="img/se.png">
 
-            <h2>Selenium IDE</h2>
-            <ul>
-            <li>Tool for recording and playing tests</li>
-            <li>Translate recorded test into many programming languages</li>
-            <li>For Firefox only</li>
-            </ul>            
+      <h2>Selenium IDE</h2>
+      <ul>
+      <li>Tool for recording and playing tests</li>
+      <li>Translate recorded test into many programming languages</li>
+      <li>For Firefox only</li>
+      </ul>            
 
-            <h2>Selenium Remote Control (Selenium 1)</h2>
-            <ul>
-            <li>Based on JavaScript injection</li>
-            <li>Support all browsers</li>
-            <li>Limited function due to JavaScript security  restriction</li>
-            <li>Outdated</li>
-            </ul>            
+      <h2>Selenium Remote Control (Selenium 1)</h2>
+      <ul>
+      <li>Based on JavaScript injection</li>
+      <li>Support all browsers</li>
+      <li>Limited function due to JavaScript security  restriction</li>
+      <li>Outdated</li>
+      </ul>            
 
-            <h2>Selenium WebDriver (Selenium 2)</h2>
-            <ul>
-            <li>Based on calling browsers' API</li>
-            <li>Support some certain browsers</li>
-            <li>Faster execution due to native calls</li>
-            <li>Backward compatibility with Selenium 1</li>
-            </ul>             
+      <h2>Selenium WebDriver (Selenium 2)</h2>
+      <ul>
+      <li>Based on calling browsers' API</li>
+      <li>Support some certain browsers</li>
+      <li>Faster execution due to native calls</li>
+      <li>Backward compatibility with Selenium 1</li>
+      </ul>             
 
-            <h2>Selenium Grid</h2>
-            <ul>
-            <li>Scale Selenium 1 solution</li>
-            <li>Run test parallely on different machines</li>
-            </ul>
-            <h2>=> In this tutorial we will use Selenium IDE and Selenium WebDriver!!</h2>
-        </google-codelab-step>
+      <h2>Selenium Grid</h2>
+      <ul>
+      <li>Scale Selenium 1 solution</li>
+      <li>Run test parallely on different machines</li>
+      </ul>
+      <h2>=> In this tutorial we will use Selenium IDE and Selenium WebDriver!!</h2>
+</google-codelab-step>
 
-        <google-codelab-step label="Selenium IDE">
-            <h2>Let's see it in action</h2>
-            <p>We are going to use SeleniumIDE to test FLOW project website: </p>
-            <ul>
-            <li><a href = "https://beta.flowzone.cloud/">Website to be tested</a></li>
-            <li><a href = "https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=299622649">Manual test-cases specification: </a></li>
-            </ul>
+<google-codelab-step label="Training materials">
+      <ul>
+      <li><a href ="https://beta.flowzone.cloud/">FLOW PROJECT Website</a></li>
+      <li><a href ="https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=299622649">FLOW PROJECT Website test case specification</a></li>
 
-            <p>
-            First, download SeleniumIDE: <a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/">here</a>
-            <br><br>
+      <li><a href ="https://github.com/Innovatube/web-automation-test/">Web-automation-test repository</a></li>
 
-            After that, download the project folder <a href="https://github.com/Innovatube/web-automation-test/archive/master.zip">here</a>, and unzip the project folder
-            <br><br>
+      <li><a href="https://nodejs.org/en/">NodeJS</a></li>
 
-            Open SeleniumIDE as below:
-            <img src ="img/firefox0.png"><br>
-            <img src ="img/firefox1.png">
-            <br><br>
-
-            Then open the test suite, and choose the test suite in this address: \FlowProjectTests_Selenese\Website\WebsiteFLOW
-            <img src = "img/ide_openTestSuite.png"><br><br>
-
-            Try modifying the speed and running the test:
-            <img src="img/ide_runTest.png">
-
-            <h2>Try selenium recording function</h2>
-            <p>
-            First pick one test case from <a href = "https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=757219395">Flow project test-cases specification</a>
-            <br><br>
-            Now click the record button from the IDE and perform the actions you are suppose to do. Then click the button again to stop the record.
-            <img src = "img/ide_record.png"><br><br></p>
-
-            <h3>Try playing back to see the result!!</h3><br>
-
-            <h2>Insert new commands</h2><br>
-            <img src = "img/ide_insertCommand.png"><br><br>
-
-            <h2>Using the element locator</h2><br>
-            <img src = "img/ide_elementLocator.png"><br><br>
-
-            <h2>Now save the test case using Ctrl + S</h2><br><br>
-            
-            <h2>Export/View test case in different formats:</h2>
-            <img src = "img/ide_changeFormat.png"><br><br>
-        </google-codelab-step>
+      </ul>
+</google-codelab-step>
 
 
+<google-codelab-step label="Selenium IDE">
+      <h2>Let's see it in action</h2>
+      <p>We are going to use SeleniumIDE to test FLOW project website: </p>
+      <ul>
+      <li><a href = "https://beta.flowzone.cloud/">Website to be tested</a></li>
+      <li><a href = "https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=299622649">Manual test-cases specification: </a></li>
+      </ul>
+
+      <p>
+      First, download SeleniumIDE: <a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/">here</a>
+      <br><br>
+
+      After that, download the project folder <a href="https://github.com/Innovatube/web-automation-test/archive/master.zip">here</a>, and unzip the project folder
+      <br><br>
+
+      Open SeleniumIDE as below:
+      <img src ="img/firefox0.png"><br>
+      <img src ="img/firefox1.png">
+      <br><br>
+
+      Then open the test suite, and choose the test suite in this address: \FlowProjectTests_Selenese\Website\WebsiteFLOW
+      <img src = "img/ide_openTestSuite.png"><br><br>
+
+      Try modifying the speed and running the test:
+      <img src="img/ide_runTest.png">
+
+      <h2>Try selenium recording function</h2>
+      <p>
+      First pick one test case from <a href = "https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=757219395">Flow project test-cases specification</a>
+      <br><br>
+      Now click the record button from the IDE and perform the actions you are suppose to do. Then click the button again to stop the record.
+      <img src = "img/ide_record.png"><br><br></p>
+
+      <h3>Try playing back to see the result!!</h3><br>
+
+      <h2>Insert new commands</h2><br>
+      <img src = "img/ide_insertCommand.png"><br><br>
+
+      <h2>Using the element locator</h2><br>
+      <img src = "img/ide_elementLocator.png"><br><br>
+
+      <h2>Now save the test case using Ctrl + S</h2><br><br>
+      
+      <h2>Export/View test case in different formats:</h2>
+      <img src = "img/ide_changeFormat.png"><br><br>
+</google-codelab-step>
 
 
-        <google-codelab-step label="Selenese script">
-            <p>
-            Selenese is a simplified script that represent automated test cases, and is translatable to other programming languages
-            <br><br>
-            <h2>This is how it looks like</h2>
 
-            <img src="img/3typeSelenese.png">
+<google-codelab-step label="Selenese script">
+      <p>
+      Selenese is a simplified script that represent automated test cases, and is translatable to other programming languages
+      <br><br>
+      <h2>This is how it looks like</h2>
 
-            There are three types of Selenese command: <b>Actions</b>, <b>Accessors</b>, and <b>Assertions</b><br><br>
+      <img src="img/3typeSelenese.png">
 
-            <h3>Actions</h3>
-            <ul><li>
-            Things like “click this link” and “select that option”. If an Action fails, or has an error, the execution of the current test is stopped.</li><li>
-            
-            Many Actions can be called with the “AndWait” suffix, e.g. “clickAndWait”. This suffix tells Selenium that the action will cause the browser to make a call to the server, and that Selenium should wait for a new page to load.</li></ul><br><br>
+      There are three types of Selenese command: <b>Actions</b>, <b>Accessors</b>, and <b>Assertions</b><br>
 
-            <h3>Accessors</h3>
-            <ul><li>
-            Examine the state of the application and store the results in variables, e.g. “storeTitle”. They are also used to automatically generate Assertions. </li></ul><br><br>
+      <h3>Actions</h3>
+      <ul><li>
+      Things like “click this link” and “select that option”. If an Action fails, or has an error, the execution of the current test is stopped.</li><li>
+      
+      Many Actions can be called with the “AndWait” suffix, e.g. “clickAndWait”. This suffix tells Selenium that the action will cause the browser to make a call to the server, and that Selenium should wait for a new page to load.</li></ul>
 
-            <h3>Assertions</h3>
-            <ul><li>Verify that the state of the application conforms to what is expected. (E.g: “make sure the page title is X” and “verify that this checkbox is checked”)</li></ul><br><br>
+      <h3>Accessors</h3>
+      <ul><li>
+      Examine the state of the application and store the results in variables, e.g. “storeTitle”. They are also used to automatically generate Assertions. </li></ul>
 
-            <h2>3 parts of a selenese command</h2><br>
+      <h3>Assertions</h3>
+      <ul><li>Verify that the state of the application conforms to what is expected. (E.g: “make sure the page title is X” and “verify that this checkbox is checked”)</li></ul>
 
-            Selenium commands are simple, they consist of the command and two parameters. For example:<br><br>
-            <img src="img/3partSelenese.png">
+      <h2>3 parts of a selenese command</h2><br>
 
-            <h2>Locating Elements</h2><br>
-            How to provide the right value to the "Target" form. Let's look at this example code: <br>
-            <img src="img/z1.png">
-            
-            <h3>Locating by Id</h3><br>
-            <img src="img/z1.png">
-            id=loginForm<br>
+      Selenium commands are simple, they consist of the command and two parameters. For example:<br><br>
+      <img src="img/3partSelenese.png">
 
-            <h3>Locating by Name</h3><br>
-            <img src="img/z1.1.png">
-            name=username <br>
-            name=continue value=Clear <br>
-            name=continue Clear <br>
-            name=continue type=button <br>
+      <h2>Locating Elements</h2><br>
+      How to provide the right value to the "Target" form. Let's look at this example code: <br>
+      <img src="img/z1.png">
+      
+      <h3>Locating by Id</h3><br>
+      <img src="img/z1.png">
+      id=loginForm<br>
 
-            <h3>Locating by Link Text</h3><br>
-            <img src="img/z2.png">
-            link=Continue <br>
-            link=Cancel <br>
+      <h3>Locating by Name</h3><br>
+      <img src="img/z1.1.png">
+      name=username <br>
+      name=continue value=Clear <br>
+      name=continue Clear <br>
+      name=continue type=button <br>
 
-            <h3>Locating by Identifiers</h3><br>
-            <img src="img/z1.png">
-            <code>[identifiers] = [id] || [name] || [otherUniqueValue]<code><br><br>
-            identifier=loginForm <br>
-            identifier=password <br>
-            identifier=continue <br>
-            continue<br><br>
+      <h3>Locating by Link Text</h3><br>
+      <img src="img/z2.png">
+      link=Continue <br>
+      link=Cancel <br>
 
-            <h3>Locating by XPath</h3>
+      <h3>Locating by Identifiers</h3><br>
+      <img src="img/z1.png">
+      <code>[identifiers] = [id] || [name] || [otherUniqueValue]</code><br><br>
+      identifier=loginForm <br>
+      identifier=password <br>
+      identifier=continue <br>
+      continue<br><br>
 
-            <ul class="simple">
-            <li>xpath=/html/body/form[1]</code> - <em>Absolute path (would break if the HTML was
-            changed only slightly)</em></li>
-            <li>//form[1]</code> - <em>First form element in the HTML</em></li>
-            <li>xpath=//form[@id='loginForm']</code> - <em>The form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
-            <li>xpath=//form[input/@name='username']</code> - <em>First form element with an input child
-            element with attribute named ‘name’ and the value ‘username’</em></li>
-            <li>//input[@name='username']</code> - <em>First input element with attribute named ‘name’ and the value
-            ‘username’</em></li>
-            <li>//form[@id='loginForm']/input[1]</code> - <em>First input child element of the
-            form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
-            <li>//input[@name='continue'][@type='button']</code> - <em>Input with attribute named ‘name’ and the value ‘continue’
-            and attribute named ‘type’ and the value ‘button’</em></li>
-            <li>//form[@id='loginForm']/input[4]</code> - <em>Fourth input child element of the
-            form element with attribute named ‘id’ and value ‘loginForm’</em></li>
-            </ul>
+      <h3>Locating by XPath</h3>
 
-
-            <h3>Locating by DOM</h3><br>
-            <img src="img/z1.png">
-            dom=document.getElementById('loginForm')<br>
-            dom=document.forms['loginForm'] <br>
-            dom=document.forms[0] <br>
-            document.forms[0].username <br>
-            document.forms[0].elements['username'] <br>
-            document.forms[0].elements[0] <br>
-            document.forms[0].elements[3] <br>
-
-            <h3>Locating by CSS</h3><br>
-            <img src="img/z3.png">
-            css=form#loginForm  <br>
-            css=input[name="username"]  <br>
-            css=input.required[type="text"]  <br>
-            css=input.passfield  <br>
-            css=#loginForm input[type="button"]  <br>
-            css=#loginForm input:nth-child <br>
-
-            <h2>Matching Text Patterns</h2>
-            <h3>How to provide the right value for "Value" form</h3>
-            To be short: using exact value or regular expression!!
-
-            </p>
-        </google-codelab-step>
+      <ul class="simple">
+      <li>xpath=/html/body/form[1] - <em>Absolute path (would break if the HTML was
+      changed only slightly)</em></li>
+      <li>//form[1] - <em>First form element in the HTML</em></li>
+      <li>xpath=//form[@id='loginForm'] - <em>The form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
+      <li>xpath=//form[input/@name='username'] - <em>First form element with an input child
+      element with attribute named ‘name’ and the value ‘username’</em></li>
+      <li>//input[@name='username'] - <em>First input element with attribute named ‘name’ and the value
+      ‘username’</em></li>
+      <li>//form[@id='loginForm']/input[1] - <em>First input child element of the
+      form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
+      <li>//input[@name='continue'][@type='button'] - <em>Input with attribute named ‘name’ and the value ‘continue’
+      and attribute named ‘type’ and the value ‘button’</em></li>
+      <li>//form[@id='loginForm']/input[4] - <em>Fourth input child element of the
+      form element with attribute named ‘id’ and value ‘loginForm’</em></li>
+      </ul>
 
 
-    </google-codelab>
+      <h3>Locating by DOM</h3><br>
+      <img src="img/z1.png">
+      dom=document.getElementById('loginForm')<br>
+      dom=document.forms['loginForm'] <br>
+      dom=document.forms[0] <br>
+      document.forms[0].username <br>
+      document.forms[0].elements['username'] <br>
+      document.forms[0].elements[0] <br>
+      document.forms[0].elements[3] <br>
+
+      <h3>Locating by CSS</h3><br>
+      <img src="img/z3.png">
+      css=form#loginForm  <br>
+      css=input[name="username"]  <br>
+      css=input.required[type="text"]  <br>
+      css=input.passfield  <br>
+      css=#loginForm input[type="button"]  <br>
+      css=#loginForm input:nth-child <br>
+
+      <h2>Matching Text Patterns</h2>
+      There are selenium commands which require <i>patterns</i> insteadOf <i>locators</i>, for example: <b>verifyTextPresent</b>, <b>verifyTitle</b>, <b>verifyAlert</b>, <b>assertConfirmation</b>, <b>verifyText</b>, and <b>verifyPrompt</b>.
+      <h3>How to provide the right "Value" for text-related command: </h3>
+      To be short: using exact value or regular expression!! Example: <br>
+
+      <table border="1" class="docutils">
+      <colgroup>
+      <col width="24%">
+      <col width="64%">
+      <col width="12%">
+      </colgroup>
+      <thead valign="bottom">
+      <tr class="row-odd"><th class="head"><strong>Command</strong></th>
+      <th class="head"><strong>Target</strong></th>
+      <th class="head"><strong>Value</strong></th>
+      </tr>
+      </thead>
+      <tbody valign="top">
+      <tr class="row-even"><td>open</td>
+      <td><a class="reference external" href="http://weather.yahoo.com/forecast/USAK0012.html">http://weather.yahoo.com/forecast/USAK0012.html</a></td>
+      <td>&nbsp;</td>
+      </tr>
+      <tr class="row-odd"><td>verifyTextPresent</td>
+      <td>regexp:Sunrise: *[0-9]{1,2}:[0-9]{2} [ap]m</td>
+      <td>&nbsp;</td>
+      </tr>
+      </tbody>
+      </table>
+
+      <h2>Using JavaScript inside Selenese</h2>
+      Let's look at this example below. There's some command require a <i>script</i> as its parameter!!
+      <img src ="img/se_javascript.png">
+      </p>
+</google-codelab-step>
+
+
+<google-codelab-step label="Selenium WebDriver (NodeJS)">
+      <h2>Ok, let's just install NodeJS first and then WebDriver introduction will come in the mean time...</h2><br>
+      <p>
+      WebDriver is designed to provide a simpler, more concise programming interface in addition to addressing some limitations in the Selenium-RC API. WebDriver’s goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems.
+      </p>
+
+      <img style="max-width: 300px; display: inline-block;" src="img/3way.jpg">
+      <img style="max-width: 300px; display: inline-block;" src="img/2way.jpg">
+
+      <h3>Let's try writting and running some code  before introducing stuffs</h3>
+      Now read the manual on the web-automation-test repository to install the environment and start the demo test script
+      
+      
+      
+      
+
+
+</google-codelab-step>
+
+
+</google-codelab>
 </body>
 
 </html>

@@ -20,7 +20,7 @@
 <google-codelab title="Web automation with Selenium" environment="web" feedback-link="">
 
 <google-codelab-step label="Automated tests for Web Apps">
-      <h2>Test Automation for Web Apps - Why/When, How</h2>
+      <h2>Test Automation for Web Apps - Why/When/How</h2>
 
       <h3>Why</h3>
       <ul>
@@ -34,59 +34,69 @@
       </ul>
 
       <h3>When </h3>
-      <p>It is NOT always advantageous to automate test cases!! When?</p>
+      <aside class="warning">It is NOT ALWAYS advantageous to automate test cases!! So when?</aside>
       <ul>
       <li>UI will change in the future</li>
       <li>Project is short of time => building automated tests eats time</li>
       <li>Some test cases is really hard to automate (feeling, readability, responsiveness, external function (send emails)</li>
       </ul>
 
-      <h2>Introducing Selenium</h2>
+      <h2>How - Introducing Selenium</h2>
       <h3>It is a set of different tools</h3>
 
-      <img src="img/se.png">
-
-      <h2>Selenium IDE</h2>
+      <img src="img/selenium-ide-logo.png"style="display: inline-block; max-width: 120px; padding-bottom: 15px">
+      
+      <div style="display:inline-block"><h2>Selenium IDE</h2>
       <ul>
       <li>Tool for recording and playing tests</li>
       <li>Translate recorded test into many programming languages</li>
       <li>For Firefox only</li>
-      </ul>            
+      </ul></div><br>
 
+      <img src="img/selenium-rc-logo.png"style="display: inline-block; max-width: 120px; padding-bottom:35px">
+
+      <div style="display:inline-block">
       <h2>Selenium Remote Control (Selenium 1)</h2>
       <ul>
       <li>Based on JavaScript injection</li>
       <li>Support all browsers</li>
       <li>Limited function due to JavaScript security  restriction</li>
       <li>Outdated</li>
-      </ul>            
+      </ul></div><br>
 
+      <img src="img/webdriver.png"style="display: inline-block; max-width: 120px; padding-bottom:50px">
+      <div style="display:inline-block">
       <h2>Selenium WebDriver (Selenium 2)</h2>
       <ul>
       <li>Based on calling browsers' API</li>
       <li>Support some certain browsers</li>
       <li>Faster execution due to native calls</li>
       <li>Backward compatibility with Selenium 1</li>
-      </ul>             
+      </ul></div><br>
 
+      <img src="img/selenium-grid-logo.png"style="display: inline-block; max-width: 120px; padding-bottom:3px">
+      <div style="display:inline-block">
       <h2>Selenium Grid</h2>
       <ul>
       <li>Scale Selenium 1 solution</li>
       <li>Run test parallely on different machines</li>
-      </ul>
-      <h2>=> In this tutorial we will use Selenium IDE and Selenium WebDriver!!</h2>
+      </ul></div>
+
+      <h2>=> In this tutorial we will use Selenium IDE and Selenium WebDriver to test FLOW Project website</h2>
+
 </google-codelab-step>
 
 <google-codelab-step label="Training materials">
-      <ul>
-      <li><a href ="https://beta.flowzone.cloud/">FLOW PROJECT Website</a></li>
-      <li><a href ="https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=299622649">FLOW PROJECT Website test case specification</a></li>
+      <aside style="font-size: 20px;" class="special">
+      
+      <p style="display: inline-block; min-width: 350px"><a href ="https://beta.flowzone.cloud/" ><img src="img/flow-logo.svg" style="width: 200px"><br>Website To Be Tested</a></p>
+      <p style="display: inline-block;"><a href ="https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=299622649">
+      <img src="img/gsheet-icon.jpg" style="width: 80px"><br>Test Cases Specification</a></p><br><br><br>
 
-      <li><a href ="https://github.com/Innovatube/web-automation-test/">Web-automation-test repository</a></li>
+      <p style="display: inline-block; min-width: 350px"><a href ="https://github.com/Innovatube/web-automation-test/"><img src="img/GitHub_Logo.png" style="width: 160px"><br>Project Repository</a></p>
 
-      <li><a href="https://nodejs.org/en/">NodeJS</a></li>
-
-      </ul>
+      <p style="display: inline-block;"><a href ="http://www.seleniumhq.org/docs/"><img src="img/webdriver.png" style="width: 100px"><br>Selenium Docs</a></p>
+      </aside>
 </google-codelab-step>
 
 
@@ -99,7 +109,7 @@
       </ul>
 
       <p>
-      First, download SeleniumIDE: <a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/">here</a>
+      First, download SeleniumIDE <a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/">here<img style="width: 40px" src="img/selenium-ide-logo.png"></a>
       <br><br>
 
       After that, download the project folder <a href="https://github.com/Innovatube/web-automation-test/archive/master.zip">here</a>, and unzip the project folder
@@ -110,7 +120,7 @@
       <img src ="img/firefox1.png">
       <br><br>
 
-      Then open the test suite, and choose the test suite in this address: \FlowProjectTests_Selenese\Website\WebsiteFLOW
+      <aside>Open the test suite, and choose the test suite in this address: \FlowProjectTests_Selenese\Website\WebsiteFLOW</aside>
       <img src = "img/ide_openTestSuite.png"><br><br>
 
       Try modifying the speed and running the test:
@@ -129,9 +139,9 @@
       <img src = "img/ide_insertCommand.png"><br><br>
 
       <h2>Using the element locator</h2><br>
-      <img src = "img/ide_elementLocator.png"><br><br>
+      <img src = "img/ide_elementLocator.png"><br>
 
-      <h2>Now save the test case using Ctrl + S</h2><br><br>
+      <h3>Now save the test case using Ctrl + S</h3><br>
       
       <h2>Export/View test case in different formats:</h2>
       <img src = "img/ide_changeFormat.png"><br><br>
@@ -140,10 +150,9 @@
 
 
 <google-codelab-step label="Selenese script">
-      <p>
-      Selenese is a simplified script that represent automated test cases, and is translatable to other programming languages
-      <br><br>
-      <h2>This is how it looks like</h2>
+      <p><i>
+      Selenese is a simplified script that represent automated test cases, and is translatable to other programming languages</i>
+      <h2>This is how it looks like</h2><br>
 
       <img src="img/3typeSelenese.png">
 
@@ -168,9 +177,7 @@
       <img src="img/3partSelenese.png">
 
       <h2>Locating Elements</h2><br>
-      How to provide the right value to the "Target" form. Let's look at this example code: <br>
-      <img src="img/z1.png">
-      
+      How to provide the right value to the "Target" form. Let's look at this example code:
       <h3>Locating by Id</h3><br>
       <img src="img/z1.png">
       id=loginForm<br>

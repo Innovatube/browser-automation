@@ -113,22 +113,22 @@
             Now click the record button from the IDE and perform the actions you are suppose to do. Then click the button again to stop the record.
             <img src = "img/ide_record.png"><br><br></p>
 
-            <h3>Try playing back to see the result!!</h3><br><br><br>
+            <h3>Try playing back to see the result!!</h3><br>
 
-            <h2>Insert new commands</h2>
+            <h2>Insert new commands</h2><br>
             <img src = "img/ide_insertCommand.png"><br><br>
 
-            <h2>Using the element locator</h2>
+            <h2>Using the element locator</h2><br>
             <img src = "img/ide_elementLocator.png"><br><br>
 
-            <h2>Save the test case using Ctrl + S</h2><br><br>
+            <h2>Now save the test case using Ctrl + S</h2><br><br>
             
             <h2>Export/View test case in different formats:</h2>
             <img src = "img/ide_changeFormat.png"><br><br>
-
-            
-
         </google-codelab-step>
+
+
+
 
         <google-codelab-step label="Selenese script">
             <p>
@@ -153,17 +153,83 @@
             <h3>Assertions</h3>
             <ul><li>Verify that the state of the application conforms to what is expected. (E.g: “make sure the page title is X” and “verify that this checkbox is checked”)</li></ul><br><br>
 
-            <h2>3 parts of a selenese command</h2>
+            <h2>3 parts of a selenese command</h2><br>
 
-            Selenium commands are simple, they consist of the command and two parameters. For example:
+            Selenium commands are simple, they consist of the command and two parameters. For example:<br><br>
             <img src="img/3partSelenese.png">
 
+            <h2>Locating Elements</h2><br>
+            How to provide the right value to the "Target" form. Let's look at this example code: <br>
+            <img src="img/z1.png">
+            <h3>Locating by Id</h3>
+            id=loginForm
+            <h3>Locating by Name</h3>
+            name=username
+            name=continue value=Clear
+            name=continue Clear
+            name=continue type=button
+
+            <h3>Locating by Link Text</h3><br>
+            <img src="img/z2.png">
+            link=Continue
+            link=Cancel
+
+            <h3>Locating by Identifiers</h3><br>
+            <img src="img/z1.png">
+            [identifiers] = [id] || [name] || [otherUniqueValue]
+
+            identifier=loginForm
+            identifier=password
+            identifier=continue
+            continue<br><br>
+
+            <h3>Locating by XPath</h3>
+
+            <ul class="simple">
+            <li>xpath=/html/body/form[1]</code> - <em>Absolute path (would break if the HTML was
+            changed only slightly)</em></li>
+            <li>//form[1]</code> - <em>First form element in the HTML</em></li>
+            <li>xpath=//form[@id='loginForm']</code> - <em>The form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
+            <li>xpath=//form[input/@name='username']</code> - <em>First form element with an input child
+            element with attribute named ‘name’ and the value ‘username’</em></li>
+            <li>//input[@name='username']</code> - <em>First input element with attribute named ‘name’ and the value
+            ‘username’</em></li>
+            <li>//form[@id='loginForm']/input[1]</code> - <em>First input child element of the
+            form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
+            <li>//input[@name='continue'][@type='button']</code> - <em>Input with attribute named ‘name’ and the value ‘continue’
+            and attribute named ‘type’ and the value ‘button’</em></li>
+            <li>//form[@id='loginForm']/input[4]</code> - <em>Fourth input child element of the
+            form element with attribute named ‘id’ and value ‘loginForm’</em></li>
+            </ul>
 
 
+            <h3>Locating by DOM</h3><br>
+            <img src="img/z1.png">
+            dom=document.getElementById('loginForm')
+            dom=document.forms['loginForm'] 
+            dom=document.forms[0] 
+            document.forms[0].username 
+            document.forms[0].elements['username'] 
+            document.forms[0].elements[0] 
+            document.forms[0].elements[3] 
 
+            <h3>Locating by CSS</h3><br>
+            <img src="img/z3.png">
+            css=form#loginForm (
+            css=input[name="username"] 
+            css=input.required[type="text"] 
+            css=input.passfield 
+            css=#loginForm input[type="button"] 
+            css=#loginForm input:nth-child
+
+            <h2>Matching Text Patterns</h2>
+            <h3>How to provide the right value for "Value" form</h3>
+            To be short: using exact value or regular expression!!
 
             </p>
         </google-codelab-step>
+
+        
     </google-codelab>
 </body>
 

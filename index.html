@@ -111,22 +111,34 @@
             First pick one test case from <a href = "https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=757219395">Flow project test-cases specification</a>
             <br><br>
             Now click the record button from the IDE and perform the actions you are suppose to do. Then click the button again to stop the record.
-            <img src = "img/ide_record.png">
-            <br><br>
-            </p>
-            <h3>Try playing back to see the result!!</h3>
-            <br><br><br>
+            <img src = "img/ide_record.png"><br><br></p>
+
+            <h3>Try playing back to see the result!!</h3><br><br><br>
+
+            <h2>Insert new commands</h2>
+            <img src = "img/ide_insertCommand.png"><br><br>
+
+            <h2>Using the element locator</h2>
+            <img src = "img/ide_elementLocator.png"><br><br>
+
+            <h2>Save the test case using Ctrl + S</h2><br><br>
+            
+            <h2>Export/View test case in different formats:</h2>
+            <img src = "img/ide_changeFormat.png"><br><br>
+
+            
+
         </google-codelab-step>
 
         <google-codelab-step label="Selenese script">
             <p>
             Selenese is a simplified script that represent automated test cases, and is translatable to other programming languages
             <br><br>
-            <h2>Anatomy - this is how it looks like</h2>
+            <h2>This is how it looks like</h2>
 
-            <img src="img/selenese.png">
+            <img src="img/3typeSelenese.png">
 
-            Selenium commands consist of three parts: <b>Actions</b>, <b>Accessors</b>, and <b>Assertions</b><br><br>
+            There are three types of Selenese command: <b>Actions</b>, <b>Accessors</b>, and <b>Assertions</b><br><br>
 
             <h3>Actions</h3>
             <ul><li>
@@ -136,10 +148,19 @@
 
             <h3>Accessors</h3>
             <ul><li>
-            examine the state of the application and store the results in variables, e.g. “storeTitle”. They are also used to automatically generate Assertions. </li></ul><br><br>
+            Examine the state of the application and store the results in variables, e.g. “storeTitle”. They are also used to automatically generate Assertions. </li></ul><br><br>
 
             <h3>Assertions</h3>
             <ul><li>Verify that the state of the application conforms to what is expected. (E.g: “make sure the page title is X” and “verify that this checkbox is checked”)</li></ul><br><br>
+
+            <h2>3 parts of a selenese command</h2>
+
+            Selenium commands are simple, they consist of the command and two parameters. For example:
+            <img src="img/3partSelenese.png">
+
+
+
+
 
             </p>
         </google-codelab-step>

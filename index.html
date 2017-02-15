@@ -161,26 +161,29 @@
             <h2>Locating Elements</h2><br>
             How to provide the right value to the "Target" form. Let's look at this example code: <br>
             <img src="img/z1.png">
-            <h3>Locating by Id</h3>
-            id=loginForm
-            <h3>Locating by Name</h3>
-            name=username
-            name=continue value=Clear
-            name=continue Clear
-            name=continue type=button
+            
+            <h3>Locating by Id</h3><br>
+            <img src="img/z1.png">
+            id=loginForm<br>
+
+            <h3>Locating by Name</h3><br>
+            <img src="img/z1.1.png">
+            name=username <br>
+            name=continue value=Clear <br>
+            name=continue Clear <br>
+            name=continue type=button <br>
 
             <h3>Locating by Link Text</h3><br>
             <img src="img/z2.png">
-            link=Continue
-            link=Cancel
+            link=Continue <br>
+            link=Cancel <br>
 
             <h3>Locating by Identifiers</h3><br>
             <img src="img/z1.png">
-            [identifiers] = [id] || [name] || [otherUniqueValue]
-
-            identifier=loginForm
-            identifier=password
-            identifier=continue
+            <code>[identifiers] = [id] || [name] || [otherUniqueValue]<code><br><br>
+            identifier=loginForm <br>
+            identifier=password <br>
+            identifier=continue <br>
             continue<br><br>
 
             <h3>Locating by XPath</h3>
@@ -205,22 +208,22 @@
 
             <h3>Locating by DOM</h3><br>
             <img src="img/z1.png">
-            dom=document.getElementById('loginForm')
-            dom=document.forms['loginForm'] 
-            dom=document.forms[0] 
-            document.forms[0].username 
-            document.forms[0].elements['username'] 
-            document.forms[0].elements[0] 
-            document.forms[0].elements[3] 
+            dom=document.getElementById('loginForm')<br>
+            dom=document.forms['loginForm'] <br>
+            dom=document.forms[0] <br>
+            document.forms[0].username <br>
+            document.forms[0].elements['username'] <br>
+            document.forms[0].elements[0] <br>
+            document.forms[0].elements[3] <br>
 
             <h3>Locating by CSS</h3><br>
             <img src="img/z3.png">
-            css=form#loginForm (
-            css=input[name="username"] 
-            css=input.required[type="text"] 
-            css=input.passfield 
-            css=#loginForm input[type="button"] 
-            css=#loginForm input:nth-child
+            css=form#loginForm  <br>
+            css=input[name="username"]  <br>
+            css=input.required[type="text"]  <br>
+            css=input.passfield  <br>
+            css=#loginForm input[type="button"]  <br>
+            css=#loginForm input:nth-child <br>
 
             <h2>Matching Text Patterns</h2>
             <h3>How to provide the right value for "Value" form</h3>
@@ -229,7 +232,7 @@
             </p>
         </google-codelab-step>
 
-        
+
     </google-codelab>
 </body>
 

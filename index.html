@@ -44,7 +44,7 @@
       <h2>How - Introducing Selenium</h2>
       <h3>It is a set of different tools</h3>
 
-      <img src="img/selenium-ide-logo.png"style="display: inline-block; max-width: 120px; padding-bottom: 15px">
+      <img src="img/selenium-ide-logo.png" class="a1" style="padding-bottom: 15px">
       
       <div style="display:inline-block"><h2>Selenium IDE</h2>
       <ul>
@@ -53,7 +53,7 @@
       <li>For Firefox only</li>
       </ul></div><br>
 
-      <img src="img/selenium-rc-logo.png"style="display: inline-block; max-width: 120px; padding-bottom:35px">
+      <img src="img/selenium-rc-logo.png" class="a1" style="padding-bottom:35px">
 
       <div style="display:inline-block">
       <h2>Selenium Remote Control (Selenium 1)</h2>
@@ -64,7 +64,7 @@
       <li>Outdated</li>
       </ul></div><br>
 
-      <img src="img/webdriver.png"style="display: inline-block; max-width: 120px; padding-bottom:50px">
+      <img src="img/webdriver.png" class="a1" style="padding-bottom:50px">
       <div style="display:inline-block">
       <h2>Selenium WebDriver (Selenium 2)</h2>
       <ul>
@@ -74,7 +74,7 @@
       <li>Backward compatibility with Selenium 1</li>
       </ul></div><br>
 
-      <img src="img/selenium-grid-logo.png"style="display: inline-block; max-width: 120px; padding-bottom:3px">
+      <img src="img/selenium-grid-logo.png" class="a1" style="padding-bottom:3px">
       <div style="display:inline-block">
       <h2>Selenium Grid</h2>
       <ul>
@@ -91,7 +91,7 @@
       
       <p style="display: inline-block; min-width: 350px"><a href ="https://beta.flowzone.cloud/" ><img src="img/flow-logo.svg" style="width: 200px"><br>Website To Be Tested</a></p>
       <p style="display: inline-block;"><a href ="https://docs.google.com/spreadsheets/d/1JDifwRafpNojGTnAIs4jwgNMmYVh-7yjkivB6bOeQ8U/edit#gid=299622649">
-      <img src="img/gsheet-icon.jpg" style="width: 80px"><br>Test Cases Specification</a></p><br><br><br>
+      <img src="img/gsheet-icon.jpg" style="width: 80px"><br>Test Cases Specification</a></p>
 
       <p style="display: inline-block; min-width: 350px"><a href ="https://github.com/Innovatube/web-automation-test/"><img src="img/GitHub_Logo.png" style="width: 160px"><br>Project Repository</a></p>
 
@@ -179,32 +179,76 @@
       <h2>Locating Elements</h2><br>
       How to provide the right value to the "Target" form. Let's look at this example code:
       <h3>Locating by Id</h3><br>
-      <img src="img/z1.png">
-      id=loginForm<br>
+      <pre><code>&#x3C;html&#x3E;
+ &#x3C;body&#x3E;
+  &#x3C;form id=&#x22;loginForm&#x22;&#x3E;
+   &#x3C;input name=&#x22;username&#x22; type=&#x22;text&#x22; /&#x3E;
+   &#x3C;input name=&#x22;password&#x22; type=&#x22;password&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;submit&#x22; value=&#x22;Login&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;button&#x22; value=&#x22;Clear&#x22; /&#x3E;
+  &#x3C;/form&#x3E;
+ &#x3C;/body&#x3E;
+&#x3C;html&#x3E;</code></pre>
+      <code>id=loginForm</code><br>
 
-      <h3>Locating by Name</h3><br>
-      <img src="img/z1.1.png">
-      name=username <br>
+      <h3>Locating by Name</h3>
+      <pre><code>&#x3C;html&#x3E;
+ &#x3C;body&#x3E;
+  &#x3C;form id=&#x22;loginForm&#x22;&#x3E;
+   &#x3C;input name=&#x22;username&#x22; type=&#x22;text&#x22; /&#x3E;
+   &#x3C;input name=&#x22;password&#x22; type=&#x22;password&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;submit&#x22; value=&#x22;Login&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;button&#x22; value=&#x22;Clear&#x22; /&#x3E;
+  &#x3C;/form&#x3E;
+ &#x3C;/body&#x3E;
+&#x3C;html&#x3E;</code></pre>
+
+      <code>name=username <br>
       name=continue value=Clear <br>
       name=continue Clear <br>
       name=continue type=button <br>
+      </code>
 
       <h3>Locating by Link Text</h3><br>
-      <img src="img/z2.png">
-      link=Continue <br>
-      link=Cancel <br>
+      <pre><code>&#x3C;html&#x3E;
+ &#x3C;body&#x3E;
+  &#x3C;p&#x3E;Are you sure you want to do this?&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;continue.html&#x22;&#x3E;Continue&#x3C;/a&#x3E;
+  &#x3C;a href=&#x22;cancel.html&#x22;&#x3E;Cancel&#x3C;/a&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;html&#x3E;</code></pre>
+      <code>link=Continue <br>
+      link=Cancel <br></code><br>
 
-      <h3>Locating by Identifiers</h3><br>
-      <img src="img/z1.png">
-      <code>[identifiers] = [id] || [name] || [otherUniqueValue]</code><br><br>
-      identifier=loginForm <br>
+      <h3>Locating by Identifiers</h3>
+      <pre><code>&#x3C;html&#x3E;
+ &#x3C;body&#x3E;
+  &#x3C;form id=&#x22;loginForm&#x22;&#x3E;
+   &#x3C;input name=&#x22;username&#x22; type=&#x22;text&#x22; /&#x3E;
+   &#x3C;input name=&#x22;password&#x22; type=&#x22;password&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;submit&#x22; value=&#x22;Login&#x22; /&#x3E;
+  &#x3C;/form&#x3E;
+ &#x3C;/body&#x3E;
+&#x3C;html&#x3E;</code></pre>
+      <aside class="special">[identifiers] = [id] OR [name] OR [otherUniqueValue]</aside>
+      <code>identifier=loginForm <br>
       identifier=password <br>
       identifier=continue <br>
-      continue<br><br>
+      continue</code><br>
 
       <h3>Locating by XPath</h3>
-
+      <pre><code>&#x3C;html&#x3E;
+ &#x3C;body&#x3E;
+  &#x3C;form id=&#x22;loginForm&#x22;&#x3E;
+   &#x3C;input name=&#x22;username&#x22; type=&#x22;text&#x22; /&#x3E;
+   &#x3C;input name=&#x22;password&#x22; type=&#x22;password&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;submit&#x22; value=&#x22;Login&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;button&#x22; value=&#x22;Clear&#x22; /&#x3E;
+  &#x3C;/form&#x3E;
+ &#x3C;/body&#x3E;
+&#x3C;html&#x3E;</code></pre>
       <ul class="simple">
+      <code>
       <li>xpath=/html/body/form[1] - <em>Absolute path (would break if the HTML was
       changed only slightly)</em></li>
       <li>//form[1] - <em>First form element in the HTML</em></li>
@@ -218,12 +262,23 @@
       <li>//input[@name='continue'][@type='button'] - <em>Input with attribute named ‘name’ and the value ‘continue’
       and attribute named ‘type’ and the value ‘button’</em></li>
       <li>//form[@id='loginForm']/input[4] - <em>Fourth input child element of the
-      form element with attribute named ‘id’ and value ‘loginForm’</em></li>
+      form element with attribute named ‘id’ and value ‘loginForm’</em></li></code>
       </ul>
 
 
       <h3>Locating by DOM</h3><br>
-      <img src="img/z1.png">
+      <pre><code>&#x3C;html&#x3E;
+ &#x3C;body&#x3E;
+  &#x3C;form id=&#x22;loginForm&#x22;&#x3E;
+   &#x3C;input name=&#x22;username&#x22; type=&#x22;text&#x22; /&#x3E;
+   &#x3C;input name=&#x22;password&#x22; type=&#x22;password&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;submit&#x22; value=&#x22;Login&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;button&#x22; value=&#x22;Clear&#x22; /&#x3E;
+  &#x3C;/form&#x3E;
+ &#x3C;/body&#x3E;
+&#x3C;html&#x3E;</code></pre>
+      
+      <code>
       dom=document.getElementById('loginForm')<br>
       dom=document.forms['loginForm'] <br>
       dom=document.forms[0] <br>
@@ -231,18 +286,31 @@
       document.forms[0].elements['username'] <br>
       document.forms[0].elements[0] <br>
       document.forms[0].elements[3] <br>
+      </code>
 
       <h3>Locating by CSS</h3><br>
-      <img src="img/z3.png">
+      <pre><code>&#x3C;html&#x3E;
+ &#x3C;body&#x3E;
+  &#x3C;form id=&#x22;loginForm&#x22;&#x3E;
+   &#x3C;input name=&#x22;username&#x22; type=&#x22;text&#x22; /&#x3E;
+   &#x3C;input name=&#x22;password&#x22; type=&#x22;password&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;submit&#x22; value=&#x22;Login&#x22; /&#x3E;
+   &#x3C;input name=&#x22;continue&#x22; type=&#x22;button&#x22; value=&#x22;Clear&#x22; /&#x3E;
+  &#x3C;/form&#x3E;
+ &#x3C;/body&#x3E;
+&#x3C;html&#x3E;</code></pre>
+
+      <code>
       css=form#loginForm  <br>
       css=input[name="username"]  <br>
       css=input.required[type="text"]  <br>
       css=input.passfield  <br>
       css=#loginForm input[type="button"]  <br>
       css=#loginForm input:nth-child <br>
+      </code><br>
 
       <h2>Matching Text Patterns</h2>
-      There are selenium commands which require <i>patterns</i> insteadOf <i>locators</i>, for example: <b>verifyTextPresent</b>, <b>verifyTitle</b>, <b>verifyAlert</b>, <b>assertConfirmation</b>, <b>verifyText</b>, and <b>verifyPrompt</b>.
+      There are selenium commands which require <i>patterns</i> insteadOf <i>locators</i>, for example: <code><b>verifyTextPresent</b></code>, <code><b>verifyTitle</b></code>, <code><b>verifyAlert</b></code>, <code><b>assertConfirmation</b></code>, <code><b>verifyText</b></code>, and <code><b>verifyPrompt</b></code>.
       <h3>How to provide the right "Value" for text-related command: </h3>
       To be short: using exact value or regular expression!! Example: <br>
 
@@ -268,10 +336,10 @@
       <td>&nbsp;</td>
       </tr>
       </tbody>
-      </table>
+      </table><br>
 
       <h2>Using JavaScript inside Selenese</h2>
-      Let's look at this example below. There's some command require a <i>script</i> as its parameter!!
+      Let's look at this example below. There's some command require a <em><i>script</i></em> as its parameter!!
       <img src ="img/se_javascript.png">
       </p>
 </google-codelab-step>
@@ -288,10 +356,34 @@
 
       <h3>Let's try writting and running some code  before introducing stuffs</h3>
       Now read the manual on the web-automation-test repository to install the environment and start the demo test script
+
+      <aside class="warning">
+            Make sure you have NodeJS on your system before you begin. It can be downloaded <a href="https://nodejs.org/en/">here: </a>
+      </aside>
+
+      <aside class="special">
+            Step 1: Clone the project repository and install the dependencies
+      </aside>
+
+      <img src="img/project_folder.gif">
       
       
-      
-      
+      <aside class="special">
+            Step 2: Add Chrome and Firefox WebDriver to your system environment variable:
+      </aside>
+      <ul><li>
+            Copy this path:<code>&#x3C;your project folder&#x3E;/DriverServer</li></code><li>
+            
+            Click on the <img style="width: 30px" src="img/windows_icon.png"> icon<li>
+
+            Search <i>"environment variable"</i>
+
+            
+
+
+
+      </li></li></ul>
+
 
 
 </google-codelab-step>
@@ -299,5 +391,11 @@
 
 </google-codelab>
 </body>
+<style type="text/css">
+      .a1{
+            display: inline-block;
+            max-width: 100px !important;
+      }
+</style>
 
 </html>

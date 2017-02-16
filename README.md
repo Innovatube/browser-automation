@@ -3,8 +3,9 @@
 First clone this repo, install dependencies:
 
 
-`git clone https://github.com/Innovatube/browser-automation.git`
+`git clone https://github.com/Innovatube/web-automation-test.git`
 
+`cd web-automation-test`
 
 `npm install`
 
@@ -33,5 +34,8 @@ After that, make sure that the paths to those drivers are added to your system e
 Start the test:
 `npm start`
 
-Further documentation: 
+Node-WebDriver API documentation:
+http://seleniumhq.github.io/selenium/docs/api/javascript/index.html
+
+Other WebDriver documentation: 
 http://www.seleniumhq.org/docs/03_webdriver.jsp

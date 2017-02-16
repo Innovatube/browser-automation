@@ -4,7 +4,9 @@ First clone this repo, install dependencies:
 
 
 `git clone https://github.com/Innovatube/web-automation-test.git`
+
 `cd web-automation-test`
+
 `npm install`
 
 

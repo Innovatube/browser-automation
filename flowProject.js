@@ -21,7 +21,6 @@ fs.readdirSync(testDir).forEach(function(file) {
 var driver = new webdriver.Builder().forBrowser('firefox').build();
 driver.get('https://beta.flowzone.cloud/').then(()=>{
 	testCases.forEach((test)=>{
-
 		test.run(driver);
 	})
 	

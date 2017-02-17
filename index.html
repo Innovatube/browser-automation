@@ -20,6 +20,13 @@
 <google-codelab title="Web automation with Selenium" environment="web" feedback-link="">
 
 <google-codelab-step label="Automated tests for Web Apps">
+      <h2>What are automated tests for Web Apps?</h2>
+      <p>Well, it looks like this! A picture worths a thousand words!<br>
+      A video worths millions!</p>
+
+      <aside class="warning">Remember to view in full-screen by clicking the small icon at the bottom-right corner</aside>
+      <video style="width: 100%;" controls><source src="img/signup-test.webm" type="video/webm"></video>
+
       <h2>Test Automation for Web Apps - Why/When/How</h2>
 
       <h3>Why</h3>
@@ -109,10 +116,10 @@
       </ul>
 
       <p>
-      First, download SeleniumIDE <a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/">here<img style="width: 40px" src="img/selenium-ide-logo.png"></a>
+      First, download SeleniumIDE <a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/"><img style="width: 40px" src="img/selenium-ide-logo.png"></a>
       <br><br>
 
-      After that, download the project folder <a href="https://github.com/Innovatube/web-automation-test/archive/master.zip">here</a>, and unzip the project folder
+      After that, download the project folder  <a href="https://github.com/Innovatube/web-automation-test/archive/master.zip"><img style="width: 73px; vertical-align: top" src="img/GitHub_Logo.png"></a>, and unzip the project folder
       <br><br>
 
       Open SeleniumIDE as below:
@@ -364,25 +371,70 @@
       <aside class="special">
             Step 1: Clone the project repository and install the dependencies
       </aside>
-
-      <img src="img/project_folder.gif">
+      <br>
+      <img src="img/project_folder.gif"><br>
+      <p>This is the lazy code:</p>
       
+      <pre>git clone https://github.com/Innovatube/web-automation-test.git<br>cd web-automation-test<br>npm install</pre>
       
+      <br>
       <aside class="special">
             Step 2: Add Chrome and Firefox WebDriver to your system environment variable:
       </aside>
-      <ul><li>
-            Copy this path:<code>&#x3C;your project folder&#x3E;/DriverServer</li></code><li>
+      <ul style="width: 300px; display: inline-block; vertical-align: middle; padding-right: 30px"><li>
+            Copy this path:<code>&#x3C;your project folder&#x3E;/DriverServer</li></code><br><li>
             
-            Click on the <img style="width: 30px" src="img/windows_icon.png"> icon<li>
+            Click on the <img style="width: 30px" src="img/windows_icon.png"> icon<br><br><li>
 
-            Search <i>"environment variable"</i>
+            Search <i>"environment variable"</i>, then press Enter<br><br><li>
 
-            
+            Choose the <code>PATH</code> environment variable, and add the copied path to it
+      </li><br><br></li></li></ul>
+
+      <img src="img/add-driver-server.gif" style="display: inline-block; width: 250px; vertical-align: middle">
+
+      <br><br>
+      <aside class="special">
+            Step 3: Open the project folder and examine the structure of the project:
+      </aside>
+      <img src="img/folder-structure.png">
+
+      <aside class="special">
+            Step 4: Now open flowProject.js 
+      </aside>
+
+      <p>Look at the code, below are the breakdowns of it: <br>
+      <i>1: Initialization of dependencies</i></p>
+      <pre><code>var webdriver = require(&#x27;selenium-webdriver&#x27;),
+&#x9;By = webdriver.By,
+&#x9;fs = require(&#x27;fs&#x27;),
+&#x9;path = require(&#x27;path&#x27;);
+
+var rootPath = path.normalize(__dirname );
+var testDir = rootPath + &#x27;/JSTests&#x27;;</code></pre>
+
+      <p><i>2: Load all tests in folder JSTests</i><br>
+      After this, all test object will be loaded into the array <code>testCases</code></p>
+
+      <pre><code>var testCases = [];
+fs.readdirSync(testDir).forEach(function(file) {
+    if (file.indexOf(&#x27;.js&#x27;) &#x3E;= 0) {
+        testCases.push(
+        &#x9;require(testDir + &#x27;/&#x27; + file)(webdriver));
+        console.log(&#x27;Loaded: &#x27; + file);
+    }
+})</code></pre>
+
+      <p><i>3: Create a driver instance, then invoke all the test cases and run them with the driver provided</i><br></p>
+
+            <pre><code>var driver = new webdriver.Builder().forBrowser(&#x27;firefox&#x27;).build();
+driver.get(&#x27;https://beta.flowzone.cloud/&#x27;).then(()=&#x3E;{
+&#x9;testCases.forEach((test)=&#x3E;{
+&#x9;&#x9;test.run(driver);
+&#x9;})
+});</code></pre>
 
 
-
-      </li></li></ul>
 
 
 
@@ -392,10 +444,10 @@
 </google-codelab>
 </body>
 <style type="text/css">
-      .a1{
-            display: inline-block;
-            max-width: 100px !important;
-      }
+   .a1{
+         display: inline-block;
+         max-width: 100px !important;
+   }
 </style>
 
 </html>

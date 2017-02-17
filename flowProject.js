@@ -6,9 +6,9 @@ var webdriver = require('selenium-webdriver'),
 
 var rootPath = path.normalize(__dirname );
 var testDir = rootPath + '/JSTests';
-var testCases = [];
 
 //load tests
+var testCases = [];
 fs.readdirSync(testDir).forEach(function(file) {
     if (file.indexOf('.js') >= 0) {
         testCases.push(
@@ -17,13 +17,11 @@ fs.readdirSync(testDir).forEach(function(file) {
     }
 })
 
-
 var driver = new webdriver.Builder().forBrowser('firefox').build();
 driver.get('https://beta.flowzone.cloud/').then(()=>{
 	testCases.forEach((test)=>{
 		test.run(driver);
 	})
-	
 	driver.quit();
 });
 

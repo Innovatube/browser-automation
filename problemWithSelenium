@@ -22,6 +22,12 @@ PROBLEM WITH SELENESE SCRIPT:
 
   + 
 
+- JavaScript inside Selenese is so limited:
+
+	+ Cannot evaluate certain javascript codes in "fooEval" functions. Found: all kind of  (document.getElements...), the only one which works is document.getElementById().
+
+	+ DOM Element returned from 
+
 - Verifying URL Location with hashbang (https://beta.flowzone.cloud/#Team) is not supported.
 
 - Checking pop-ups links is impossible (must use WebDriver)

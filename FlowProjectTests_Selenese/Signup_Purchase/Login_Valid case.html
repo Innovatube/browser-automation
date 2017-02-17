@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://beta.flowzone.cloud/" />
+<title>Login_Valid case</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Login_Valid case</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a &gt; div.flowIcon &gt; div &gt; span.flIconText</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='app']/div/div/div/div/a[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>name=email</td>
+	<td>ginny@innovatube.com</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>name=password</td>
+	<td>Kutjchit141_</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.flow-btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeTextPresent</td>
+	<td>Thank you for choosing FLOW!</td>
+	<td>oldAccount</td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>dom=document.getElementsByClassName('fl-purchase')[0]</td>
+	<td>purchaseScreen</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${oldAccount}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${purchaseScreen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>${oldAccount} || ${purchaseScreen}</td>
+	<td>true</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -4,20 +4,19 @@ module.exports = function(webdriver){
 
 	var test = {};
 	test.run = function(driver){
-		var elementToCheck = [];
-		
-		elementToCheck.push(driver.findElement(By.className('flCover')));
-		elementToCheck.push(driver.findElement(By.name('Features')));
-		elementToCheck.push(driver.findElement(By.name('Team')));
-		elementToCheck.push(driver.findElement(By.name('Pricing')));
-		elementToCheck.push(driver.findElement(By.name('Contact')));
-
-		var result = true;
-		elementToCheck.forEach((item, index)=>{
-			result = result && (item!=null);
-		})
-		
-		console.log("Test case 1: ", result);
+		console.log("Test case 1 executing...");
+		try{
+			driver.findElement(By.className('flCover'));
+			driver.findElement(By.name('Features'));
+			driver.findElement(By.name('Team'));
+			driver.findElement(By.name('Pricing'));
+			driver.findElement(By.name('Contact'));
+		}
+		catch(err){
+			console.log("ERROR: ", err);
+			return;
+		}
+		console.log("PASSED");
 	}
 
 	return test;

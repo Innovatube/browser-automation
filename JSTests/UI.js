@@ -4,7 +4,7 @@ module.exports = function(webdriver){
 
 	var test = {};
 	test.run = function(driver){
-		console.log("Test case 1 executing...");
+		console.log("Test case UI executing...");
 		try{
 			driver.findElement(By.className('flCover'));
 			driver.findElement(By.name('Features'));
@@ -16,7 +16,7 @@ module.exports = function(webdriver){
 			console.log("ERROR: ", err);
 			return;
 		}
-		console.log("PASSED");
+		console.log("Test case UI: PASSED");
 	}
 
 	return test;

@@ -127,7 +127,7 @@
       <img src ="img/firefox1.png">
       <br><br>
 
-      <aside>Open the test suite, and choose the test suite in this address: \FlowProjectTests_Selenese\Website\WebsiteFLOW</aside>
+      <aside>Open the test suite, and choose the test suite in this address: <code><\FlowProjectTests_Selenese\Website\WebsiteFLOW</code></aside>
       <img src = "img/ide_openTestSuite.png"><br><br>
 
       Try modifying the speed and running the test:
@@ -255,21 +255,21 @@
  &#x3C;/body&#x3E;
 &#x3C;html&#x3E;</code></pre>
       <ul class="simple">
-      <code>
-      <li>xpath=/html/body/form[1] - <em>Absolute path (would break if the HTML was
+      
+      <li><code>xpath=/html/body/form[1]</code> - <em>Absolute path (would break if the HTML was
       changed only slightly)</em></li>
-      <li>//form[1] - <em>First form element in the HTML</em></li>
-      <li>xpath=//form[@id='loginForm'] - <em>The form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
-      <li>xpath=//form[input/@name='username'] - <em>First form element with an input child
+      <li><code>//form[1]</code> - <em>First form element in the HTML</em></li>
+      <li><code>xpath=//form[@id='loginForm']</code> - <em>The form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
+      <li><code>xpath=//form[input/@name='username']</code> - <em>First form element with an input child
       element with attribute named ‘name’ and the value ‘username’</em></li>
-      <li>//input[@name='username'] - <em>First input element with attribute named ‘name’ and the value
+      <li><code>//input[@name='username']</code> - <em>First input element with attribute named ‘name’ and the value
       ‘username’</em></li>
-      <li>//form[@id='loginForm']/input[1] - <em>First input child element of the
+      <li><code>//form[@id='loginForm']/input[1]</code> - <em>First input child element of the
       form element with attribute named ‘id’ and the value ‘loginForm’</em></li>
-      <li>//input[@name='continue'][@type='button'] - <em>Input with attribute named ‘name’ and the value ‘continue’
+      <li><code>//input[@name='continue'][@type='button']</code> - <em>Input with attribute named ‘name’ and the value ‘continue’
       and attribute named ‘type’ and the value ‘button’</em></li>
-      <li>//form[@id='loginForm']/input[4] - <em>Fourth input child element of the
-      form element with attribute named ‘id’ and value ‘loginForm’</em></li></code>
+      <li><code>//form[@id='loginForm']/input[4]</code> - <em>Fourth input child element of the
+      form element with attribute named ‘id’ and value ‘loginForm’</em></li>
       </ul>
 
 
@@ -346,7 +346,7 @@
       </table><br>
 
       <h2>Using JavaScript inside Selenese</h2>
-      Let's look at this example below. There's some command require a <em><i>script</i></em> as its parameter!!
+      Let's look at this example below. There's some command require a <b><i>script</i></b> as its parameter!!
       <img src ="img/se_javascript.png">
       </p>
 </google-codelab-step>
@@ -433,11 +433,26 @@ driver.get(&#x27;https://beta.flowzone.cloud/&#x27;).then(()=&#x3E;{
 &#x9;&#x9;test.run(driver);
 &#x9;})
 });</code></pre>
+</google-codelab-step>
 
+<google-codelab-step label="Vague test cases">
+   <aside class="warning"> We may now think that our work will be much more easier with those automated testing tools that we have just studied. But in reality it is not that simple. Stay tuned!</aside>
 
+   <p>Some test cases found in FLOW project are look-and-feel test that require human effort to decide whether or not the test is passed. Below are examples!</p><br>
 
+   <aside class="special">How are we going to define an automated test for this case?</aside>
+   <img src="img/testcase_ui.png">
+   <p>
+      <b>Solution 1:</b> Okay, we can use the Element Inspector to get the element id or name for different parts of the website. But what if the part does not have an id or name? What if the UI is changing frequently in the future?
+   </p>
+   <img src="img/element_no_id.png"><br><br>
 
+   <p><u><b>Solution 2:</b> Define a better test case and syncronize frequently with the customer to best suit their needs!!</u>
+   </p>
 
+   <aside class="warning"><b> => There are bunches of vague test cases like this and we will have to change them now!</b></aside>
+
+   <img src="img/testcase_web.png">
 </google-codelab-step>
 
 

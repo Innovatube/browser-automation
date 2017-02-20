@@ -16,12 +16,14 @@ fs.readdirSync(testDir).forEach(function(file) {
         console.log('Loaded: ' + file);
     }
 })
+console.log("");
 
 var driver = new webdriver.Builder().forBrowser('firefox').build();
 driver.baseUrl = 'https://beta.flowzone.cloud/';
 driver.get(driver.baseUrl).then(()=>{
 	testCases.forEach((test)=>{
 		test.run(driver);
+
 	})
 	driver.quit();
 });

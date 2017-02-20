@@ -4,19 +4,25 @@ module.exports = function(webdriver){
 
 	var test = {};
 	test.run = function(driver){
-		console.log("Test case UI executing...");
-		try{
-			driver.findElement(By.className('flCover'));
-			driver.findElement(By.name('Features'));
-			driver.findElement(By.name('Team'));
-			driver.findElement(By.name('Pricing'));
-			driver.findElement(By.name('Contact'));
+		driver.get(driver.baseUrl).then(()=>{
+			
+			console.log("======================");
+			console.log("Test case UI: Executing...");
+			this.perform(driver);
+			console.log("Test case UI: Done!");
+		});
+	}
+
+	test.perform = function(driver){
+		driver.findElement(By.className('flCover')).catch(logNotFound);
+		driver.findElement(By.name('Features')).catch(logNotFound);
+		driver.findElement(By.name('Team')).catch(logNotFound);
+		driver.findElement(By.name('Pricing')).catch(logNotFound);
+		driver.findElement(By.name('Contact')).catch(logNotFound);
+
+		var	logNotFound = function(err){
+			console.log(err.message);
 		}
-		catch(err){
-			console.log("ERROR: ", err);
-			return;
-		}
-		console.log("Test case UI: PASSED");
 	}
 
 	return test;

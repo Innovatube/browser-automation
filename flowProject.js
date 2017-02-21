@@ -7,24 +7,24 @@ var webdriver = require('selenium-webdriver'),
 var rootPath = path.normalize(__dirname );
 var testDir = rootPath + '/JSTests';
 
-//load tests
+//load tests - test chaining
 var testCases = [];
-fs.readdirSync(testDir).forEach(function(file) {
-    if (file.indexOf('.js') >= 0) {
-        testCases.push(
-        	require(testDir + '/' + file)(webdriver));
-        console.log('Loaded: ' + file);
-    }
-})
+var files = fs.readdirSync(testDir);
+testCases.push(require(testDir + '/' + files[0]));
+console.log('Loaded: ' + files[0]);
+for(var i = 1; i < files.length; i++){
+	testCases.push(
+    	require(testDir + '/' + files[i]));
+    console.log('Loaded: ' + files[i]);
+}
 console.log("");
 
 var driver = new webdriver.Builder().forBrowser('firefox').build();
 driver.baseUrl = 'https://beta.flowzone.cloud/';
 driver.get(driver.baseUrl).then(()=>{
 	testCases.forEach((test)=>{
-		test.run(driver);
-
+		test(webdriver, driver);
 	})
-	driver.quit();
-});
+})
+.then(()=>driver.quit());
 

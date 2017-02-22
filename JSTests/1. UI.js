@@ -1,27 +1,32 @@
-module.exports = function(webdriver, driver){
+module.exports = function(webdriver){
+	var test = {};
 	var By = webdriver.By,
 		Until = webdriver.Until;
-
-	console.log("======================");
-	console.log("Test case UI: Executing...");
 
 	var	logNotFound = function(err){
 		console.log(err.message);
 	}
 
-	driver.get(driver.baseUrl).then(()=>{		
-		driver.findElement(By.className('flCover')).catch(logNotFound);
-		driver.findElement(By.name('Features')).catch(logNotFound);
-		driver.findElement(By.name('Team')).catch(logNotFound);
-		driver.findElement(By.name('Pricing')).catch(logNotFound);
-		driver.findElement(By.name('Contact')).catch(logNotFound);	
-	})
-	.then(()=>console.log("Test case UI: Done!"));
-
-	
-	
-	
+	test.next = {};
+	test.run = function(driver){
+		console.log("======================");
+		console.log("Test case UI: Executing...");
 
 
+
+		return 
+		driver.findElement(By.className('flCover'))
+		.catch(logNotFound)
+		.then(driver.findElement(By.name('Features'))).catch(logNotFound)
+		.then(driver.findElement(By.name('Team'))).catch(logNotFound)
+		.then(driver.findElement(By.name('Pricing'))).catch(logNotFound)
+		.then(driver.findElement(By.name('Contact'))).catch(logNotFound)
+		// .then(()=>{
+		// 	console.log("Test case UI: Finished");
+		// 	// do something with prev result
+		// 	return nextTest.run(driver);	
+		// });
+	}
 	
+	return test;
 };

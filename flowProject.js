@@ -20,6 +20,7 @@ console.log("");
 var driver = new webdriver.Builder().forBrowser('firefox').build();
 driver.baseUrl = 'https://beta.flowzone.cloud/';
 driver.get(driver.baseUrl);
+
 testCases.forEach((test)=>{
 	test(webdriver, driver);
 })

@@ -1,4 +1,5 @@
 var webdriver = require('selenium-webdriver'),
+	until = webdriver.until,
 	By = webdriver.By,
 	fs = require('fs'),
 	path = require('path');
@@ -7,49 +8,23 @@ var	nf = function(err){
 	console.log(err.message);
 }
 
-var driver = new webdriver.Builder().forBrowser('firefox').build();
-driver.baseUrl = 'https://beta.flowzone.cloud/';
-driver.get(driver.baseUrl);
+var driver = new webdriver.Builder().forBrowser('chrome').build();
+driver.get('https://surveys.flowzone.cloud/survey/Motivator/56/1/2c31b79b-e2bf-549d-b86a-5f7c816cfeff')
 
+driver.wait(until.elementLocated(By.css('.group-survey-pages')), 5000);
 
-var navigateLogin = function(){
-	var menuButton = By.css("a > div.flowIcon > div > span.flIconText");
-	var loginButton = By.xpath("//div[@id='app']/div/div/div/div/a[2]/button");
+var item1 = driver.findElement(By.css('.drop-item > div:nth-child(1)'));
 
-	driver.findElement(menuButton).click().catch(nf);
-	driver.findElement(loginButton).click().catch(nf)
-}
+driver.actions()
+.dragAndDrop(item1, {x: 0, y: -100})
+.perform();
 
-var typeEmailPassword = function(){
-	driver.findElement(By.name("email"))
-	.sendKeys("ginny@innovatube.com").catch(nf);
-
-	driver.findElement(By.name("password"))
-	.sendKeys("Kutjchit141_").catch(nf);
-}
-
-var pressRegister = ()=>{
-	driver.findElement(By.css("button.flow-btn"))
-	.click()
-	.catch(nf);
-}
-
-navigateLogin();
-typeEmailPassword();
-pressRegister();
-
-driver.findElement(By.className("fl-login-title"))
-.getText().then((text)=>{
-	if(text == "Thank you for choosing FLOW!"){
-		var loginBtn = By.xpath('//*[@id="app"]/div/nav/div[3]/a/div/div/span');
-		driver.findElement(loginBtn)
-		.click()
-		.catch(nf)
-	}
-},nf)
-
-.then(()=>{
-		console.log("Test case UI: Done!");
-},nf);
+driver.wait(new Promise((res)=>{
+	setTimeout(res,100000);
+}),100000);
 
 //driver.quit();
+
+//.drop-item > div:nth-child(1)
+//div.drop-item
+

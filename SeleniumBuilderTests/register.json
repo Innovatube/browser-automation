@@ -1,0 +1,64 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "https://beta.flowzone.cloud/"
+    },
+    {
+      "type": "store",
+      "text": "peter.tran@innovatube.com",
+      "variable": "myEmail"
+    },
+    {
+      "type": "store",
+      "text": "tube@123",
+      "variable": "myPassword"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//div[@id='app']//span[.='LOG IN']"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "REGISTER"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "email"
+      },
+      "text": "${myEmail}"
+    },
+    {
+      "type": "sendKeysToElement",
+      "locator": {
+        "type": "name",
+        "value": "password"
+      },
+      "text": "${myPassword}"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "button.flow-btn"
+      }
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
